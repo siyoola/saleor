@@ -10,6 +10,7 @@ from ...core.utils.json_serializer import CustomJsonEncoder
 from ...payment import PaymentError, TransactionKind
 from ...webhook.event_types import WebhookEventAsyncType, WebhookEventSyncType
 from ...webhook.payloads import (
+    generate_api_call_payload,
     generate_checkout_payload,
     generate_customer_payload,
     generate_fulfillment_payload,
@@ -43,6 +44,9 @@ from .utils import (
 )
 
 if TYPE_CHECKING:
+    from django.core.handlers.wsgi import WSGIRequest
+    from django.http import HttpResponse
+
     from ...account.models import User
     from ...checkout.models import Checkout
     from ...discount.models import Sale
@@ -296,6 +300,16 @@ class WebhookPlugin(BasePlugin):
         )
         trigger_webhooks_async(
             product_variant_data, WebhookEventAsyncType.PRODUCT_VARIANT_BACK_IN_STOCK
+        )
+
+    def report_api_call(
+        self, request: "WSGIRequest", response: "HttpResponse", previous_value: Any
+    ) -> Any:
+        if not self.active:
+            return previous_value
+        api_call_data = generate_api_call_payload(request, response)
+        trigger_webhooks_for_event.delay(
+            WebhookEventType.REPORT_API_CALL, api_call_data
         )
 
     def checkout_created(self, checkout: "Checkout", previous_value: Any) -> Any:
