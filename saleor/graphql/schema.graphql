@@ -2645,13 +2645,13 @@ input IntRangeInput {
 }
 
 type Invoice implements ObjectWithMetadata & Job & Node {
+  id: ID!
   privateMetadata: [MetadataItem]!
   metadata: [MetadataItem]!
   status: JobStatusEnum!
   createdAt: DateTime!
   updatedAt: DateTime!
   message: String
-  id: ID!
   number: String
   externalUrl: String
   url: String
@@ -3661,8 +3661,6 @@ input MenuInput {
 
 type MenuItem implements Node & ObjectWithMetadata {
   id: ID!
-  privateMetadata: [MetadataItem]!
-  metadata: [MetadataItem]!
   name: String!
   menu: Menu!
   parent: MenuItem
@@ -3670,6 +3668,8 @@ type MenuItem implements Node & ObjectWithMetadata {
   collection: Collection
   page: Page
   level: Int!
+  privateMetadata: [MetadataItem]!
+  metadata: [MetadataItem]!
   children: [MenuItem]
   url: String
   translation(languageCode: LanguageCodeEnum!): MenuItemTranslation
@@ -7341,13 +7341,10 @@ type Webhook implements Node {
   syncEvents: [WebhookEventSync!]!
   asyncEvents: [WebhookEventAsync!]!
   app: App!
-<<<<<<< HEAD
   eventDeliveries(sortBy: EventDeliverySortingInput, filter: EventDeliveryFilterInput, before: String, after: String, first: Int, last: Int): EventDeliveryCountableConnection
-=======
   targetUrl: String!
   isActive: Boolean!
   secretKey: String
->>>>>>> d64c7ba56... Fix BC changes
 }
 
 type WebhookCreate {
