@@ -10,7 +10,7 @@ from django_countries.fields import Country
 from prices import Money, TaxedMoney
 
 from ..checkout.interface import CheckoutTaxedPricesData
-from ..core.models import EventDelivery
+from ..core.models import EventDelivery, EventDeliveryAttempt
 from ..payment.interface import (
     CustomerSource,
     GatewayResponse,
@@ -488,6 +488,11 @@ class BasePlugin:
     #
     #  Overwrite this method if you need log api call.
     report_api_call: Callable[[WSGIRequest, HttpResponse, Any], Any]
+
+    #  Trigger when api call is made.
+    #
+    #  Overwrite this method if you need log api call.
+    report_event_delivery_attempt: Callable[["EventDeliveryAttempt", Any], Any]
 
     #  Trigger when sale is created.
     #
