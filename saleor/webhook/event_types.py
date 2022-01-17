@@ -1,5 +1,6 @@
 from ..core.permissions import (
     AccountPermissions,
+    AppPermission,
     CheckoutPermissions,
     DiscountPermissions,
     OrderPermissions,
@@ -184,8 +185,8 @@ class WebhookEventAsyncType:
         PAGE_DELETED: PagePermissions.MANAGE_PAGES,
         TRANSLATION_CREATED: SitePermissions.MANAGE_TRANSLATIONS,
         TRANSLATION_UPDATED: SitePermissions.MANAGE_TRANSLATIONS,
-        REPORT_API_CALL: ProductPermissions.MANAGE_PRODUCTS,
-        REPORT_EVENT_DELIVERY_ATTEMPT: ProductPermissions.MANAGE_PRODUCTS,
+        REPORT_API_CALL: AppPermission.MANAGE_APPS,
+        REPORT_EVENT_DELIVERY_ATTEMPT: AppPermission.MANAGE_APPS,
     }
 
 
