@@ -65,7 +65,7 @@ TRANSLATABLE_CONTENT_TO_MODEL = {
 
 def validate_input_against_model(model: Model, input_data: dict):
     data_to_validate = {key: value for key, value in input_data.items() if value}
-    instance = model(**data_to_validate)
+    instance = model(**data_to_validate)  # type: ignore
     all_fields = [field.name for field in model._meta.fields]
     exclude_fields = set(all_fields) - set(data_to_validate)
     instance.full_clean(exclude=exclude_fields, validate_unique=False)
