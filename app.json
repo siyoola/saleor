@@ -11,6 +11,11 @@
   ],
   "image": "heroku/python",
   "env": {
+    "DATABASE_URL": {
+      "description": "",
+      "value": "postgresql://doadmin:lBUKljQExjxBXwge@zhome-do-user-3188416-0.b.db.ondigitalocean.com:25060/saleorheroku?sslmode=require",
+      "required": true
+    },
     "DJANGO_SETTINGS_MODULE": "saleor.settings",
     "DEBUG": "True",
     "NPM_CONFIG_PRODUCTION": "false",
@@ -44,7 +49,6 @@
     "postdeploy": "python manage.py migrate && python manage.py populatedb --createsuperuser --withoutimages"
   },
   "addons": [
-    "heroku-postgresql:hobby-dev",
     "heroku-redis:hobby-dev",
     "cloudamqp:lemur",
     "sendgrid:starter",
