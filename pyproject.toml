@@ -67,6 +67,7 @@ documentation = "https://docs.saleor.io/"
   cryptography = "^36.0.0"
   graphene = "<3.0"
   saleor-social-auth = "^0.3.0"
+  python-jose = "^3.3.0"
 
     [tool.poetry.dependencies.uvicorn]
     extras = [ "standard" ]
