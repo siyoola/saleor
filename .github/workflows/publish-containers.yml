@@ -127,9 +127,9 @@ jobs:
           push: true
           tags: |
             zfarhat/esstore:latest
-            zfarhat/esstore:3.1.5-s.7
+            zfarhat/esstore:3.1.5-s.9
             ghcr.io/zfarhat/saleor:latest
-            ghcr.io/siyoola/saleor:3.1.5-s.7
+            ghcr.io/siyoola/saleor:3.1.5-s.9
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
