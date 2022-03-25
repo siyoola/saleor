@@ -200,6 +200,7 @@ INSTALLED_APPS = [
     # Django modules
     "django.contrib.contenttypes",
     "django.contrib.sites",
+    # "django.contrib.sessions",
     "django.contrib.staticfiles",
     "django.contrib.auth",
     "django.contrib.postgres",
