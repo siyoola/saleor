@@ -111,20 +111,25 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
 
-      # - name: Login to GitHub Container Registry
-      #   uses: docker/login-action@v1
-      #   with:
-      #     registry: ghcr.io
-      #     username: ${{ secrets.CR_USERNAME }}
-      #     password: ${{ secrets.CR_PAT }}
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.CR_USERNAME }}
+          password: ${{ secrets.CR_PAT }}
 
       - name: Build and Push
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           context: .
+          platforms: linux/amd64,linux/arm64
           push: true
-          tags: zfarhat/esstore:3.1.5-s.7
+          tags: |
+            zfarhat/esstore:latest
+            zfarhat/esstore:3.1.5-s.7
+            ghcr.io/zfarhat/saleor:latest
+            ghcr.io/siyoola/saleor:3.1.5-s.7
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
