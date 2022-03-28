@@ -1857,7 +1857,7 @@ type ShippingMethodType implements Node & ObjectWithMetadata {
   """Returns translated shipping method fields for the given language code."""
   translation(
     """A language code to return the translation for shipping method."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): ShippingMethodTranslation
 
   """List of channels available for the method."""
@@ -2865,7 +2865,7 @@ type Product implements Node & ObjectWithMetadata {
   """Returns translated product fields for the given language code."""
   translation(
     """A language code to return the translation for product."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): ProductTranslation
 
   """Date when product is available for purchase."""
@@ -3056,7 +3056,7 @@ type Attribute implements Node & ObjectWithMetadata {
   """Returns translated attribute fields for the given language code."""
   translation(
     """A language code to return the translation for attribute."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): AttributeTranslation
 
   """
@@ -3189,7 +3189,7 @@ type AttributeValue implements Node {
   """Returns translated attribute value fields for the given language code."""
   translation(
     """A language code to return the translation for attribute value."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): AttributeValueTranslation
 
   """The input type to use for entering attribute values in the dashboard."""
@@ -3428,7 +3428,7 @@ type Category implements Node & ObjectWithMetadata {
   """Returns translated category fields for the given language code."""
   translation(
     """A language code to return the translation for category."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): CategoryTranslation
 }
 
@@ -3534,7 +3534,7 @@ type ProductVariant implements Node & ObjectWithMetadata {
   """Returns translated product variant fields for the given language code."""
   translation(
     """A language code to return the translation for product variant."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): ProductVariantTranslation
 
   """Digital content for the product variant."""
@@ -4187,7 +4187,7 @@ type Collection implements Node & ObjectWithMetadata {
   """Returns translated collection fields for the given language code."""
   translation(
     """A language code to return the translation for collection."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): CollectionTranslation
 
   """List of channels in which the collection is available."""
@@ -4451,7 +4451,7 @@ type ProductTranslatableContent implements Node {
   """Returns translated product fields for the given language code."""
   translation(
     """A language code to return the translation for product."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): ProductTranslation
 
   """Represents an individual item for sale in the storefront."""
@@ -4469,7 +4469,7 @@ type AttributeValueTranslatableContent implements Node {
   """Returns translated attribute value fields for the given language code."""
   translation(
     """A language code to return the translation for attribute value."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): AttributeValueTranslation
 
   """Represents a value of an attribute."""
@@ -4489,7 +4489,7 @@ type CollectionTranslatableContent implements Node {
   """Returns translated collection fields for the given language code."""
   translation(
     """A language code to return the translation for collection."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): CollectionTranslation
 
   """Represents a collection of products."""
@@ -4509,7 +4509,7 @@ type CategoryTranslatableContent implements Node {
   """Returns translated category fields for the given language code."""
   translation(
     """A language code to return the translation for category."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): CategoryTranslation
 
   """Represents a single category of products."""
@@ -4523,7 +4523,7 @@ type AttributeTranslatableContent implements Node {
   """Returns translated attribute fields for the given language code."""
   translation(
     """A language code to return the translation for attribute."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): AttributeTranslation
 
   """Custom attribute of a product."""
@@ -4537,7 +4537,7 @@ type ProductVariantTranslatableContent implements Node {
   """Returns translated product variant fields for the given language code."""
   translation(
     """A language code to return the translation for product variant."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): ProductVariantTranslation
 
   """Represents a version of a product such as different size or color."""
@@ -4560,7 +4560,7 @@ type PageTranslatableContent implements Node {
   """Returns translated page fields for the given language code."""
   translation(
     """A language code to return the translation for page."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): PageTranslation
 
   """
@@ -4617,7 +4617,7 @@ type Page implements Node & ObjectWithMetadata {
   """Returns translated page fields for the given language code."""
   translation(
     """A language code to return the translation for page."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): PageTranslation
 
   """List of attributes assigned to this product."""
@@ -4672,7 +4672,7 @@ type ShippingMethodTranslatableContent implements Node {
   """Returns translated shipping method fields for the given language code."""
   translation(
     """A language code to return the translation for shipping method."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): ShippingMethodTranslation
 
   """
@@ -4688,7 +4688,7 @@ type SaleTranslatableContent implements Node {
   """Returns translated sale fields for the given language code."""
   translation(
     """A language code to return the translation for sale."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): SaleTranslation
 
   """
@@ -4788,7 +4788,7 @@ type Sale implements Node & ObjectWithMetadata {
   """Returns translated sale fields for the given language code."""
   translation(
     """A language code to return the translation for sale."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): SaleTranslation
 
   """List of channels available for the sale."""
@@ -4855,7 +4855,7 @@ type VoucherTranslatableContent implements Node {
   """Returns translated voucher fields for the given language code."""
   translation(
     """A language code to return the translation for voucher."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): VoucherTranslation
 
   """
@@ -4962,7 +4962,7 @@ type Voucher implements Node & ObjectWithMetadata {
   """Returns translated voucher fields for the given language code."""
   translation(
     """A language code to return the translation for voucher."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): VoucherTranslation
 
   """Determines a type of discount for voucher - value or percentage"""
@@ -5011,7 +5011,7 @@ type MenuItemTranslatableContent implements Node {
   """Returns translated menu item fields for the given language code."""
   translation(
     """A language code to return the translation for menu item."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): MenuItemTranslation
 
   """
@@ -5056,7 +5056,7 @@ type MenuItem implements Node & ObjectWithMetadata {
   """Returns translated menu item fields for the given language code."""
   translation(
     """A language code to return the translation for menu item."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): MenuItemTranslation
 }
 
@@ -5216,7 +5216,7 @@ type Shop {
   """Returns translated shop fields for the given language code."""
   translation(
     """A language code to return the translation for shop."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): ShopTranslation
 
   """Enable automatic fulfillment for all digital products."""
@@ -5332,7 +5332,7 @@ type ShippingMethod implements Node & ObjectWithMetadata {
   """Returns translated shipping method fields for the given language code."""
   translation(
     """A language code to return the translation for shipping method."""
-    languageCode: LanguageCodeEnum!
+    languageCode: LanguageCodeEnum = ar
   ): ShippingMethodTranslation
 
   """The price of selected shipping method."""
