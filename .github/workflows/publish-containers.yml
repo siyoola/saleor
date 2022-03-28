@@ -103,9 +103,9 @@ jobs:
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-buildx-
-      
+
       - name: Login to DockerHub
-        uses: docker/login-action@v1 
+        uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -127,9 +127,9 @@ jobs:
           push: true
           tags: |
             zfarhat/esstore:latest
-            zfarhat/esstore:3.1.5-OIDC.1
+            zfarhat/esstore:3.1.5-OIDC.3
             ghcr.io/siyoola/saleor:latest
-            ghcr.io/siyoola/saleor:3.1.5-OIDC.1
+            ghcr.io/siyoola/saleor:3.1.5-OIDC.3
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
 
