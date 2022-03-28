@@ -14,7 +14,7 @@ class TranslationField(graphene.Field):
                 description=TranslationDescriptions.LANGUAGE_CODE.format(
                     type_name=type_name
                 ),
-                required=True,
+                default_value="ar"
             ),
             description=TranslationDescriptions.DESCRIPTION.format(type_name=type_name),
             resolver=resolver,
