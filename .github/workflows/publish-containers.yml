@@ -128,7 +128,7 @@ jobs:
           tags: |
             zfarhat/esstore:latest
             zfarhat/esstore:3.1.5-OIDC.1
-            ghcr.io/zfarhat/saleor:latest
+            ghcr.io/siyoola/saleor:latest
             ghcr.io/siyoola/saleor:3.1.5-OIDC.1
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
