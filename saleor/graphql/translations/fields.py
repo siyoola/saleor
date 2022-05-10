@@ -15,7 +15,7 @@ class TranslationField(graphene.Field):
                     type_name=type_name
                 ),
                 required=False,
-                default_value="ar",
+                default_value=LanguageCodeEnum.AR.value,
             ),
             description=TranslationDescriptions.DESCRIPTION.format(type_name=type_name),
             resolver=resolver,
